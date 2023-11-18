@@ -1,14 +1,15 @@
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 
 function App() {
   return (
     <>
-      <div className="w-full h-[100dvh] flex justify-center items-center bg-[#242424] text-[whitesmoke] ">
-        Expenser
-        <Home />
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
     </>
   );
 }
