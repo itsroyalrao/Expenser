@@ -29,7 +29,7 @@ function Header() {
                   Login
                 </Link>
                 <Link
-                  to={"/login"}
+                  to={"/signup"}
                   className={
                     "flex justify-center bg-blue-600 active:bg-blue-700 px-4 py-2 rounded-md md:cursor-pointer"
                   }
@@ -50,7 +50,7 @@ function Header() {
               Login
             </Link>
             <Link
-              to={"/login"}
+              to={"/signup"}
               className="bg-blue-600 active:bg-blue-700 px-4 py-2 rounded-lg md:cursor-pointer"
             >
               Get Started
@@ -76,7 +76,7 @@ function Header() {
                   Login
                 </Link>
                 <Link
-                  to={"/login"}
+                  to={"/signup"}
                   className={
                     "flex justify-center bg-blue-600 active:bg-blue-700 px-4 py-2 rounded-md cursor-pointer"
                   }
