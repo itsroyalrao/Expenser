@@ -4,7 +4,7 @@ function Signup() {
   const onMobile = /Mobi|Android/i.test(navigator.userAgent);
 
   return (
-    <div className="w-full h-[100dvh] min-h-screen flex items-center justify-center bg-[#202020]">
+    <div className="w-full h-[100dvh] md:min-h-screen flex items-center justify-center bg-[#202020]">
       <div className={
           onMobile
             ? "w-full h-full flex flex-col items-center justify-center bg-white py-[10%] md:py-2 space-y-6"

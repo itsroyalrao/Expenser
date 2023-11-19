@@ -4,7 +4,7 @@ function Login() {
   const onMobile = /Mobi|Android/i.test(navigator.userAgent);
 
   return (
-    <div className="w-full h-[100dvh] min-h-screen flex items-center justify-center bg-[#202020]">
+    <div className="w-full h-[100dvh] md:min-h-screen flex items-center justify-center bg-[#202020]">
       <div
         className={
           onMobile
