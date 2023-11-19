@@ -13,7 +13,7 @@ function Header() {
           Get Started
         </div>
       </div>
-      <div className="flex flex-col items-center md:hidden">
+      <div className="flex flex-col items-center md:hidden pr-2">
         <i
           className={
             clicked ? "fas fa-times scale-125" : "fas fa-bars scale-125"
