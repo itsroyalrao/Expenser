@@ -13,7 +13,7 @@ function Login() {
               <div>
                 <input
                   type="email"
-                  className="w-full px-3 py-2 border-2 rounded-lg"
+                  className="w-full px-3 py-2 border-2 rounded-lg focus:scale-105 outline-none border-blue-500"
                   placeholder="Email address"
                 />
                 <div className="flex justify-end px-1 text-blue-500 text-lg">
@@ -21,7 +21,7 @@ function Login() {
                 </div>
                 <input
                   type="password"
-                  className="w-full px-3 py-2 border-2 rounded-lg"
+                  className="w-full px-3 py-2 border-2 rounded-lg focus:scale-105 outline-none border-blue-500"
                   placeholder="Password"
                 />
               </div>

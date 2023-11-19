@@ -13,23 +13,18 @@ function Signup() {
               <div className="space-y-1">
                 <input
                   type="text"
-                  className="w-full px-3 py-2 border-2 rounded-lg"
+                  className="w-full px-3 py-2 border-2 rounded-lg focus:scale-105 outline-none border-blue-500"
                   placeholder="Username"
                 />
                 <input
                   type="email"
-                  className="w-full px-3 py-2 border-2 rounded-lg"
+                  className="w-full px-3 py-2 border-2 rounded-lg focus:scale-105 outline-none border-blue-500"
                   placeholder="Email address"
                 />
                 <input
                   type="password"
-                  className="w-full px-3 py-2 border-2 rounded-lg"
+                  className="w-full px-3 py-2 border-2 rounded-lg focus:scale-105 outline-none border-blue-500"
                   placeholder="Password"
-                />
-                <input
-                  type="password"
-                  className="w-full px-3 py-2 border-2 rounded-lg"
-                  placeholder="Confirm password"
                 />
               </div>
               <div className="w-full bg-blue-600 flex justify-center py-2 rounded-lg text-white text-xl">
