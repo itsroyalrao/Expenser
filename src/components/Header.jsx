@@ -10,7 +10,7 @@ function Header() {
       <div className="text-3xl py-3">Xpenser</div>
       {onMobile ? (
         <>
-          <div className="flex flex-col items-center md:hidden pr-2">
+          <div className="flex flex-col items-center pr-2">
             <i
               className={
                 clicked ? "fas fa-times scale-125" : "fas fa-bars scale-125"
