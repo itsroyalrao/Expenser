@@ -13,7 +13,7 @@ function Login() {
             className="w-full px-3 py-2 border-2 rounded-lg"
             placeholder="Email address"
           />
-          <div className="flex justify-end px-1 text-blue-400">
+          <div className="flex justify-end px-1 text-blue-400 text-lg">
             Forgot password?
           </div>
           <input
