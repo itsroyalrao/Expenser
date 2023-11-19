@@ -16,42 +16,65 @@ function Header() {
           Get Started
         </div>
       </div>
-      <div className="flex flex-col items-center md:hidden pr-2">
-        <i
-          className={
-            onMobile
-              ? clicked
-                ? "fas fa-times scale-125"
-                : "fas fa-bars scale-125"
-              : clicked
-              ? "fas fa-times scale-125 cursor-pointer"
-              : "fas fa-bars scale-125 cursor-pointer"
-          }
-          onClick={() => setClicked(!clicked)}
-        ></i>
-        {clicked && (
-          <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-[#242424] p-3 rounded-md">
-            <div
-              className={
-                onMobile
-                  ? "w-full px-4 py-2 rounded-md flex justify-center active:bg-[#393939] active:text-gray-400"
-                  : "w-full px-4 py-2 rounded-md flex justify-center hover:bg-[#393939] active:bg-[#323232] active:text-gray-400 cursor-pointer"
-              }
-            >
-              Login
+      {onMobile ? (
+        <div className="flex flex-col items-center pr-2">
+          <i
+            className={
+              clicked
+                  ? "fas fa-times scale-125"
+                  : "fas fa-bars scale-125"
+            }
+            onClick={() => setClicked(!clicked)}
+          ></i>
+          {clicked && (
+            <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-[#242424] p-3 rounded-md">
+              <div
+                className={
+                   "w-full px-4 py-2 rounded-md flex justify-center active:bg-[#393939] active:text-gray-400"
+                }
+              >
+                Login
+              </div>
+              <div
+                className={
+                 "flex justify-center bg-blue-600 active:bg-blue-700 px-4 py-2 rounded-md md:cursor-pointer"
+                }
+              >
+                Get Started
+              </div>
             </div>
-            <div
-              className={
-                onMobile
-                  ? "flex justify-center bg-blue-600 active:bg-blue-700 px-4 py-2 rounded-md md:cursor-pointer"
-                  : "flex justify-center bg-blue-600 active:bg-blue-700 px-4 py-2 rounded-md cursor-pointer"
-              }
-            >
-              Get Started
+          )}
+        </div>
+      ) : (
+        <div className="flex flex-col items-center md:hidden pr-2">
+          <i
+            className={
+              clicked
+                ? "fas fa-times scale-125 cursor-pointer"
+                : "fas fa-bars scale-125 cursor-pointer"
+            }
+            onClick={() => setClicked(!clicked)}
+          ></i>
+          {clicked && (
+            <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-[#242424] p-3 rounded-md">
+              <div
+                className={
+                  "w-full px-4 py-2 rounded-md flex justify-center hover:bg-[#393939] active:bg-[#323232] active:text-gray-400 cursor-pointer"
+                }
+              >
+                Login
+              </div>
+              <div
+                className={
+                  "flex justify-center bg-blue-600 active:bg-blue-700 px-4 py-2 rounded-md cursor-pointer"
+                }
+              >
+                Get Started
+              </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
