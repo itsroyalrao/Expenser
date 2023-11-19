@@ -14,6 +14,8 @@ function Login() {
 
         <hr className="w-[90%] border-t-2 border-gray-300" />
 
+        <div className="py-2">Or Login with</div>
+
         <div className="flex justify-center w-[80%] bg-red-500 py-2 text-[whitesmoke] text-xl rounded-lg">Google</div>
         <div className="flex justify-center w-[80%] bg-blue-500 py-2 text-[whitesmoke] text-xl rounded-lg">Facebook</div>
         <div className="flex justify-center w-[80%] bg-black py-2 text-[whitesmoke] text-xl rounded-lg">Github</div>
