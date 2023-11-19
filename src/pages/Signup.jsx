@@ -45,7 +45,7 @@ function Signup() {
             </div>
           </div>
 
-          <div className="w-[90%] h-1 sm:w-1 sm:h-full bg-gray-400 rounded-full"></div>
+          <div className="w-[80%] h-[2px] sm:w-1 sm:h-full bg-gray-400 rounded-full"></div>
 
           <div className="w-full flex flex-col items-center space-y-4 mt-4 sm:mt-0">
             <div className="text-xl">Or join with</div>
