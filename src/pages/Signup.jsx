@@ -9,7 +9,7 @@ function Signup() {
         </div>
         <div className="w-full flex flex-col items-center sm:flex-row">
           <div className="w-full flex flex-col items-center pb-4">
-            <div className="w-[80%] flex flex-col space-y-4">
+            <div className="w-[80%] flex flex-col space-y-2">
               <div className="space-y-1">
                 <input
                   type="text"
@@ -28,7 +28,7 @@ function Signup() {
                 />
               </div>
               <div className="w-full bg-blue-600 flex justify-center py-2 rounded-lg text-white text-xl">
-                Login
+                Sign up
               </div>
               <div className="text-lg flex justify-center space-x-1">
                 <span>Already have an account?</span>
@@ -42,7 +42,7 @@ function Signup() {
           <div className="w-[90%] h-1 sm:w-1 sm:h-full bg-gray-500 rounded-full"></div>
 
           <div className="w-full flex flex-col items-center space-y-4 mt-4 sm:mt-0">
-            <div className="text-xl">Or continue with</div>
+            <div className="text-xl">Or join with</div>
             <div className="flex justify-center w-[80%] bg-red-500 py-2 text-[whitesmoke] text-xl rounded-lg">
               Google
             </div>

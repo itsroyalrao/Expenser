@@ -9,7 +9,7 @@ function Login() {
         </div>
         <div className="w-full flex flex-col items-center sm:flex-row">
           <div className="w-full flex flex-col items-center pb-4">
-            <div className="w-[80%] flex flex-col space-y-4">
+            <div className="w-[80%] flex flex-col space-y-2">
               <div>
                 <input
                   type="email"
