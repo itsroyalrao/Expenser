@@ -5,8 +5,8 @@ function Header() {
   return (
     <div className="w-full flex items-center justify-between bg-[#202020] text-[whitesmoke] px-4 lg:px-12">
       <div className="text-3xl py-3">Xpenser</div>
-      <div className={clicked? "fixed top-16 right-0 flex flex-col items-center space-y-2 bg-[#242424] p-2 rounded md:flex-row md:bg-inherit md:static":"hidden md:flex md:items-center md:space-x-2"}>
-        <div className="active:bg-[#393939] sm:hover:bg-[#393939] active:text-gray-400 sm:hover:text-gray-400 px-4 py-2 rounded-lg sm:cursor-pointer">
+      <div className={clicked? "fixed top-16 right-0 flex flex-col items-center space-y-2 bg-[#242424] p-3 rounded md:space-x-0 md:space-y-2 md:flex-row md:bg-inherit md:static":"hidden md:flex md:items-center md:space-x-2"}>
+        <div className="w-full px-4 py-2 rounded-lg flex justify-center active:bg-[#393939] active:text-gray-400 md:w-fit sm:hover:bg-[#393939] sm:active:bg-[#323232] sm:hover:text-gray-400 sm:cursor-pointer">
           Login
         </div>
         <div className="bg-blue-600 active:bg-blue-700 px-4 py-2 rounded-lg sm:cursor-pointer">
