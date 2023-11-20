@@ -1,12 +1,19 @@
 import { useState } from "react";
 // import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 function Header({ user }) {
   const [clicked, setClicked] = useState(false);
 
   const onMobile = /Mobi|Android/i.test(navigator.userAgent);
   console.log("header-user", user);
+
+  const logout = async () => {
+    await axios.get(
+      "https://expenser-backend-production.up.railway.app/auth/logout"
+    );
+  };
 
   return (
     <div className="w-full flex items-center justify-between bg-[#202020] text-[whitesmoke] px-4 md:px-12">
@@ -23,7 +30,10 @@ function Header({ user }) {
             {clicked && (
               <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-[#242424] p-3 rounded-md">
                 <div>{user}</div>
-                <div className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded-lg">
+                <div
+                  className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded-lg active:bg-red-700"
+                  onClick={logout}
+                >
                   Logout
                 </div>
               </div>
@@ -32,9 +42,12 @@ function Header({ user }) {
         </>
       ) : (
         <>
-          <div className="hidden md:flex md:items-center md:space-x-2">
+          <div className="hidden md:flex md:items-center md:space-x-3">
             <div>{user}</div>
-            <div className="text-[whitesmoke] bg-red-600 px-3 py-2 rounded-lg">
+            <div
+              className="text-[whitesmoke] bg-red-600 px-3 py-2 rounded-lg cursor-pointer active:bg-red-700"
+              onClick={logout}
+            >
               Logout
             </div>
           </div>
@@ -50,7 +63,10 @@ function Header({ user }) {
             {clicked && (
               <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-[#242424] p-3 rounded-md">
                 <div>{user}</div>
-                <div className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded-lg">
+                <div
+                  className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded-lg cursor-pointer active:bg-red-700"
+                  onClick={logout}
+                >
                   Logout
                 </div>
               </div>
