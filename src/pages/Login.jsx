@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 function Login() {
   const onMobile = /Mobi|Android/i.test(navigator.userAgent);
 
+  const google = () => {
+    window.open("http://localhost:3000/auth/google", "_self");
+  };
+
   return (
     <div className="w-full h-[100dvh] md:min-h-screen flex items-center justify-center bg-[#202020]">
       <div
@@ -49,7 +53,10 @@ function Login() {
 
           <div className="w-full flex flex-col items-center space-y-4 mt-4 sm:mt-0">
             <div className="text-xl">Or continue with</div>
-            <div className="flex justify-center w-[80%] bg-red-500 py-2 text-[whitesmoke] text-xl rounded-lg">
+            <div
+              className="flex justify-center w-[80%] bg-red-500 py-2 text-[whitesmoke] text-xl rounded-lg"
+              onClick={google}
+            >
               Google
             </div>
             <div className="flex justify-center w-[80%] bg-blue-500 py-2 text-[whitesmoke] text-xl rounded-lg">
