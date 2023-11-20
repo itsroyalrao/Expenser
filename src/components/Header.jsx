@@ -10,8 +10,9 @@ function Header({ user }) {
   console.log("header-user", user);
 
   const logout = async () => {
-    await axios.get(
-      "https://expenser-backend-production.up.railway.app/auth/logout"
+    window.open(
+      "https://expenser-backend-production.up.railway.app/auth/logout",
+      "_self"
     );
   };
 
