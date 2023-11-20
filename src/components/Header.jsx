@@ -23,6 +23,9 @@ function Header({ user }) {
             {clicked && (
               <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-[#242424] p-3 rounded-md">
                 <div>{user}</div>
+                <div className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded-lg">
+                  Logout
+                </div>
               </div>
             )}
           </div>
@@ -31,6 +34,9 @@ function Header({ user }) {
         <>
           <div className="hidden md:flex md:items-center md:space-x-2">
             <div>{user}</div>
+            <div className="text-[whitesmoke] bg-red-600 px-3 py-2 rounded-lg">
+              Logout
+            </div>
           </div>
           <div className="flex flex-col items-center md:hidden pr-2">
             <i
@@ -44,6 +50,9 @@ function Header({ user }) {
             {clicked && (
               <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-[#242424] p-3 rounded-md">
                 <div>{user}</div>
+                <div className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded-lg">
+                  Logout
+                </div>
               </div>
             )}
           </div>
