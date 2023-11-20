@@ -43,12 +43,25 @@ function Login() {
               <div className="w-full bg-blue-600 flex justify-center py-2 rounded-lg text-white text-xl">
                 Login
               </div>
-              <div className="text-lg flex justify-center space-x-1">
-                <span>Don&apos;t you have an account?</span>
-                <Link to={"/signup"} className="font-bold text-green-600">
-                  Signup
-                </Link>
-              </div>
+              {onMobile ? (
+                <>
+                  <div className="flex justify-center space-x-1">
+                    <span>Don&apos;t you have an account?</span>
+                    <Link to={"/signup"} className="font-bold text-green-600">
+                      Signup
+                    </Link>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="text-lg flex justify-center space-x-1">
+                    <span>Don&apos;t you have an account?</span>
+                    <Link to={"/signup"} className="font-bold text-green-600">
+                      Signup
+                    </Link>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
