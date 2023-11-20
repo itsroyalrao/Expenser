@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import axios from "axios";
 
 import Header from "../components/Header";
 
@@ -14,6 +15,15 @@ function Home() {
       console.log("user", user);
     } else navigate("/login");
   }, [user, navigate]);
+
+  useEffect(() => {
+    (async () => {
+      const response = await axios.get(
+        "https://expenser-backend-production.up.railway.app/auth/session"
+      );
+      console.log("response", response);
+    })();
+  }, []);
 
   return (
     <>

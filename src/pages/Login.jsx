@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { useEffect } from "react";
 
 function Login() {
   const onMobile = /Mobi|Android/i.test(navigator.userAgent);
@@ -11,15 +9,6 @@ function Login() {
       "_self"
     );
   };
-
-  useEffect(() => {
-    (async () => {
-      const response = await axios.get(
-        "https://expenser-backend-production.up.railway.app/auth/session"
-      );
-      console.log("response", response);
-    })();
-  }, []);
 
   return (
     <div className="w-full h-[100dvh] md:min-h-screen flex items-center justify-center bg-[#202020]">
