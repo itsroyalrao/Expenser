@@ -15,49 +15,47 @@ function Signup() {
         <div className="flex justify-center text-4xl font-bold text-blue-600">
           Expenser
         </div>
-        <div className="w-full flex flex-col items-center sm:flex-row">
-          <div className="w-full flex flex-col items-center pb-4">
-            <div className="w-[80%] flex flex-col space-y-2">
-              <div className="space-y-1">
-                <input
-                  type="text"
-                  className="w-full px-3 py-2 border-2 rounded-lg focus:scale-105 outline-none border-blue-500"
-                  placeholder="Username"
-                />
-                <input
-                  type="email"
-                  className="w-full px-3 py-2 border-2 rounded-lg focus:scale-105 outline-none border-blue-500"
-                  placeholder="Email address"
-                />
-                <input
-                  type="password"
-                  className="w-full px-3 py-2 border-2 rounded-lg focus:scale-105 outline-none border-blue-500"
-                  placeholder="Password"
-                />
-              </div>
-              <div className="w-full bg-blue-600 flex justify-center py-2 rounded-lg text-white text-xl">
-                Sign up
-              </div>
-              {onMobile ? (
-                <>
-                  <div className="flex justify-center space-x-1">
-                    <span>Already have an account?</span>
-                    <Link to={"/login"} className="font-bold text-green-600">
-                      Login
-                    </Link>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="text-lg flex justify-center space-x-1">
-                    <span>Already have an account?</span>
-                    <Link to={"/login"} className="font-bold text-green-600">
-                      Login
-                    </Link>
-                  </div>
-                </>
-              )}
+        <div className="w-full flex flex-col items-center pb-4">
+          <div className="w-[80%] flex flex-col space-y-2">
+            <div className="space-y-1">
+              <input
+                type="text"
+                className="w-full px-3 py-2 border-2 rounded-lg focus:scale-105 outline-none border-blue-500"
+                placeholder="Username"
+              />
+              <input
+                type="email"
+                className="w-full px-3 py-2 border-2 rounded-lg focus:scale-105 outline-none border-blue-500"
+                placeholder="Email address"
+              />
+              <input
+                type="password"
+                className="w-full px-3 py-2 border-2 rounded-lg focus:scale-105 outline-none border-blue-500"
+                placeholder="Password"
+              />
             </div>
+            <div className="w-full bg-blue-600 flex justify-center py-2 rounded-lg text-white text-xl">
+              Sign up
+            </div>
+            {onMobile ? (
+              <>
+                <div className="flex justify-center space-x-1">
+                  <span>Already have an account?</span>
+                  <Link to={"/login"} className="font-bold text-green-600">
+                    Login
+                  </Link>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="text-lg flex justify-center space-x-1">
+                  <span>Already have an account?</span>
+                  <Link to={"/login"} className="font-bold text-green-600">
+                    Login
+                  </Link>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
