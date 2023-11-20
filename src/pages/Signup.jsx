@@ -3,13 +3,22 @@ import { Link } from "react-router-dom";
 function Signup() {
   const onMobile = /Mobi|Android/i.test(navigator.userAgent);
 
+  const google = () => {
+    window.open(
+      "https://expenser-backend-production.up.railway.app/auth/google",
+      "_self"
+    );
+  };
+
   return (
     <div className="w-full h-[100dvh] md:min-h-screen flex items-center justify-center bg-[#202020]">
-      <div className={
+      <div
+        className={
           onMobile
             ? "w-full h-full flex flex-col items-center justify-center bg-white py-[10%] md:py-2 space-y-6"
             : "w-full sm:w-[80%] lg:w-[60%] h-full sm:h-[80%] flex flex-col items-center justify-center bg-white py-[10%] space-y-6 sm:space-y-12 rounded-2xl"
-        }>
+        }
+      >
         <div className="flex justify-center text-4xl font-bold text-blue-600">
           Expenser
         </div>
@@ -36,12 +45,25 @@ function Signup() {
               <div className="w-full bg-blue-600 flex justify-center py-2 rounded-lg text-white text-xl">
                 Sign up
               </div>
-              <div className="text-lg flex justify-center space-x-1">
-                <span>Already have an account?</span>
-                <Link to={"/login"} className="font-bold text-green-600">
-                  Login{" "}
-                </Link>
-              </div>
+              {onMobile ? (
+                <>
+                  <div className="flex justify-center space-x-1">
+                    <span>Already have an account?</span>
+                    <Link to={"/login"} className="font-bold text-green-600">
+                      Login
+                    </Link>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="text-lg flex justify-center space-x-1">
+                    <span>Already have an account?</span>
+                    <Link to={"/login"} className="font-bold text-green-600">
+                      Login
+                    </Link>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
@@ -49,7 +71,10 @@ function Signup() {
 
           <div className="w-full flex flex-col items-center space-y-4 mt-4 sm:mt-0">
             <div className="text-xl">Or join with</div>
-            <div className="flex justify-center w-[80%] bg-red-500 py-2 text-[whitesmoke] text-xl rounded-lg">
+            <div
+              className="flex justify-center w-[80%] bg-red-500 py-2 text-[whitesmoke] text-xl rounded-lg"
+              onClick={google}
+            >
               Google
             </div>
             <div className="flex justify-center w-[80%] bg-blue-500 py-2 text-[whitesmoke] text-xl rounded-lg">
@@ -66,4 +91,3 @@ function Signup() {
 }
 
 export default Signup;
-
