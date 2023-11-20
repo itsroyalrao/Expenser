@@ -16,6 +16,17 @@ function Home() {
     } else navigate("/login");
   }, [user, navigate]);
 
+  useEffect(() => {
+    const getUser = async () => {
+      const response = await axios.post(
+        "https://expenser-backend-production.up.railway.app/auth/session",
+        { userID: user.sub }
+      );
+      console.log(response);
+    };
+    getUser();
+  });
+
   return (
     <>
       {user && (
