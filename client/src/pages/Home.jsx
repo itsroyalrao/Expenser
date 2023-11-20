@@ -1,6 +1,10 @@
+import { useLocation } from "react-router-dom";
 import Header from "../components/Header";
 
 function Home() {
+  const location = useLocation()
+  console.log(location);
+  
   return (
     <>
       <div className="w-full h-[100dvh] flex flex-col text-xl">
