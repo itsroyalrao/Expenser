@@ -10,7 +10,7 @@ function Header({ user }) {
 
   const logout = async () => {
     window.open(
-      "https://expenser-backend-production.up.railway.app/auth/logout",
+      `https://expenser-backend-production.up.railway.app/auth/logout?userID=${user}`,
       "_self"
     );
   };

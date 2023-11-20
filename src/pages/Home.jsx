@@ -31,7 +31,7 @@ function Home() {
     <>
       {user && (
         <div className="w-full h-[100dvh] flex flex-col text-xl">
-          <Header user={user.name} />
+          <Header user={user.sub} />
           <div className="grow flex justify-center items-center bg-[#393939] text-[whitesmoke]">
             Home
           </div>

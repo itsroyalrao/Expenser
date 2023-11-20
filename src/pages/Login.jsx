@@ -16,7 +16,7 @@ function Login() {
         className={
           onMobile
             ? "w-full h-full flex flex-col items-center justify-center bg-white py-[10%] md:py-2 space-y-6"
-            : "w-full sm:w-[80%] lg:w-[60%] h-full sm:h-[80%] flex flex-col items-center justify-center bg-white py-[10%] space-y-6 sm:space-y-12 rounded-2xl"
+            : "w-full sm:w-[80%] lg:w-[60%] h-full sm:h-[80%] flex flex-col items-center justify-center bg-white py-[10%] space-y-6 sm:space-y-12 sm:rounded-2xl"
         }
       >
         <div className="flex justify-center text-4xl font-bold text-blue-600">
