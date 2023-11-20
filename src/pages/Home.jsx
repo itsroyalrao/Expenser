@@ -1,6 +1,8 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import Header from "../components/Header";
 import { useEffect, useState } from "react";
+import axios from "axios";
+
+import Header from "../components/Header";
 
 function Home() {
   const { search } = useLocation();
@@ -10,9 +12,19 @@ function Home() {
 
   useEffect(() => {
     if (user) {
-      console.log(user);
+      console.log("user", user);
     } else navigate("/login");
   }, [user, navigate]);
+
+  useEffect(() => {
+    const getUser = async () => {
+      const response = await axios.get(
+        "https://expenser-backend-production.up.railway.app/auth/login/success"
+      );
+      console.log("response", response);
+    };
+    getUser();
+  }, []);
 
   return (
     <>

@@ -6,7 +6,7 @@ function Header({ user }) {
   const [clicked, setClicked] = useState(false);
 
   const onMobile = /Mobi|Android/i.test(navigator.userAgent);
-  console.log(user);
+  console.log("header-user", user);
 
   return (
     <div className="w-full flex items-center justify-between bg-[#202020] text-[whitesmoke] px-4 md:px-12">
