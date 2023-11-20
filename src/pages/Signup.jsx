@@ -3,13 +3,6 @@ import { Link } from "react-router-dom";
 function Signup() {
   const onMobile = /Mobi|Android/i.test(navigator.userAgent);
 
-  const google = () => {
-    window.open(
-      "https://expenser-backend-production.up.railway.app/auth/google",
-      "_self"
-    );
-  };
-
   return (
     <div className="w-full h-[100dvh] md:min-h-screen flex items-center justify-center bg-[#202020]">
       <div
@@ -64,24 +57,6 @@ function Signup() {
                   </div>
                 </>
               )}
-            </div>
-          </div>
-
-          <div className="w-[80%] h-[2px] sm:w-1 sm:h-full bg-gray-400 rounded-full"></div>
-
-          <div className="w-full flex flex-col items-center space-y-4 mt-4 sm:mt-0">
-            <div className="text-xl">Or join with</div>
-            <div
-              className="flex justify-center w-[80%] bg-red-500 py-2 text-[whitesmoke] text-xl rounded-lg"
-              onClick={google}
-            >
-              Google
-            </div>
-            <div className="flex justify-center w-[80%] bg-blue-500 py-2 text-[whitesmoke] text-xl rounded-lg">
-              Facebook
-            </div>
-            <div className="flex justify-center w-[80%] bg-black py-2 text-[whitesmoke] text-xl rounded-lg">
-              Github
             </div>
           </div>
         </div>
