@@ -4,7 +4,10 @@ function Login() {
   const onMobile = /Mobi|Android/i.test(navigator.userAgent);
 
   const google = () => {
-    window.open("http://localhost:3000/auth/google", "_self");
+    window.open(
+      "https://expenser-backend-production.up.railway.app/auth/google",
+      "_self"
+    );
   };
 
   return (
