@@ -1,0 +1,24 @@
+import axios from "axios";
+
+async function getUser(email, password, setMessage) {
+  try {
+    if (!email) setMessage("Please provide Email address");
+    else if (!password) setMessage("Please provide Password");
+    else {
+      localStorage.setItem("user", email);
+      console.log(email, password);
+
+      const response = await axios.post(`http://localhost:3000/auth/login`, {
+        email,
+        password,
+      });
+      console.log(response);
+      if (response.data.success) window.location.href = "/";
+      else setMessage(response.data.msg);
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+export default getUser;

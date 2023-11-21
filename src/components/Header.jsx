@@ -1,7 +1,8 @@
 import { useState } from "react";
-// import PropTypes from "prop-types";
+import logoutUser from "../helper/logoutUser";
+import PropTypes from "prop-types";
 
-function Header() {
+function Header({ user }) {
   const onMobile = /Mobi|Android/i.test(navigator.userAgent);
 
   const [clicked, setClicked] = useState(false);
@@ -20,7 +21,13 @@ function Header() {
             ></i>
             {clicked && (
               <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-[#242424] p-3 rounded-md">
-                <div className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded-lg active:bg-red-700">
+                <div className="capitalize bg-[#393939] p-2 rounded">
+                  {user.username}
+                </div>
+                <div
+                  className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded active:bg-red-700"
+                  onClick={() => logoutUser(user.email)}
+                >
                   Logout
                 </div>
               </div>
@@ -30,7 +37,13 @@ function Header() {
       ) : (
         <>
           <div className="hidden md:flex md:items-center md:space-x-3">
-            <div className="text-[whitesmoke] bg-red-600 px-3 py-2 rounded-lg cursor-pointer active:bg-red-700">
+            <div className="capitalize bg-[#393939] p-2 rounded">
+              {user.username}
+            </div>
+            <div
+              className="text-[whitesmoke] bg-red-600 px-3 py-2 rounded cursor-pointer active:bg-red-700"
+              onClick={() => logoutUser(user.email)}
+            >
               Logout
             </div>
           </div>
@@ -45,7 +58,13 @@ function Header() {
             ></i>
             {clicked && (
               <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-[#242424] p-3 rounded-md">
-                <div className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded-lg cursor-pointer active:bg-red-700">
+                <div className="capitalize bg-[#393939] p-2 rounded">
+                  {user.username}
+                </div>
+                <div
+                  className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded cursor-pointer active:bg-red-700"
+                  onClick={() => logoutUser(user.email)}
+                >
                   Logout
                 </div>
               </div>
@@ -57,8 +76,8 @@ function Header() {
   );
 }
 
-// Header.propTypes = {
-//   user: PropTypes.string,
-// };
+Header.propTypes = {
+  user: PropTypes.object,
+};
 
 export default Header;
