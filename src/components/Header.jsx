@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import logoutUser from "../helper/logoutUser";
 
 function Header({ user }) {
   const onMobile = /Mobi|Android/i.test(navigator.userAgent);
@@ -24,14 +24,12 @@ function Header({ user }) {
                 <div className="w-full flex justify-center capitalize bg-[#393939] p-2 rounded">
                   {user.username}
                 </div>
-                <Link
+                <div
                   className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded active:bg-red-700"
-                  onClick={() => {
-                    document.cookie = `uid=; expires=Thu, 01 Jan 2000 00:00:00 UTC; path=/;`;
-                  }}
+                  onClick={() => logoutUser(user.email)}
                 >
                   Logout
-                </Link>
+                </div>
               </div>
             )}
           </div>
@@ -42,14 +40,12 @@ function Header({ user }) {
             <div className="capitalize bg-[#393939] p-2 rounded">
               {user.username}
             </div>
-            <Link
+            <div
               className="text-[whitesmoke] bg-red-600 px-3 py-2 rounded active:bg-red-700"
-              onClick={() => {
-                document.cookie = `uid=; expires=Thu, 01 Jan 2000 00:00:00 UTC; path=/;`;
-              }}
+              onClick={() => logoutUser(user.email)}
             >
               Logout
-            </Link>
+            </div>
           </div>
           <div className="flex flex-col items-center md:hidden pr-2">
             <i
@@ -65,15 +61,12 @@ function Header({ user }) {
                 <div className="w-full flex justify-center capitalize bg-[#393939] p-2 rounded">
                   {user.username}
                 </div>
-                <Link
-                  to={"/login"}
+                <div
                   className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded  active:bg-red-700"
-                  onClick={() => {
-                    document.cookie = `uid=; expires=Thu, 01 Jan 2000 00:00:00 UTC; path=/;`;
-                  }}
+                  onClick={() => logoutUser(user.email)}
                 >
                   Logout
-                </Link>
+                </div>
               </div>
             )}
           </div>

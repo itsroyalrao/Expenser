@@ -8,7 +8,6 @@ async function addUser(username, email, password, confirmPassword, setMessage) {
     else if (password !== confirmPassword) setMessage("Password doesn't match");
     else {
       localStorage.setItem("user", email);
-      console.log(username, email, password);
 
       const response = await axios.post(
         // `http://localhost:3000/auth/signup`,
