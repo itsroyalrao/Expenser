@@ -11,8 +11,8 @@ async function addUser(username, email, password, confirmPassword, setMessage) {
       console.log(username, email, password);
 
       const response = await axios.post(
-        // `http://localhost:3000/auth/signup`,
-        `https://expenser-backend-production.up.railway.app/auth/signup`,
+        `http://localhost:3000/auth/signup`,
+        // `https://expenser-backend-production.up.railway.app/auth/signup`,
         {
           username,
           email,

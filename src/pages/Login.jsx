@@ -10,7 +10,7 @@ function Login() {
 
   return (
     <div className="w-full h-[100dvh] md:min-h-screen flex items-center justify-center bg-[#202020]">
-      <div className="w-full sm:w-[60%] md:w-[40%] lg:w-[25%] h-full sm:h-[80%] flex flex-col items-center justify-center bg-white py-[10%] space-y-6 sm:rounded-2xl">
+      <div className="w-full sm:w-[64%] md:w-[48%] lg:w-[32%] h-full sm:h-[80%] flex flex-col items-center justify-center bg-white py-[10%] space-y-6 sm:rounded-2xl">
         <div className="flex justify-center text-4xl font-bold text-blue-600">
           Expenser
         </div>

@@ -9,8 +9,8 @@ async function getUser(email, password, setMessage) {
       console.log(email, password);
 
       const response = await axios.post(
-        // `http://localhost:3000/auth/login`,
-        `https://expenser-backend-production.up.railway.app/auth/login`,
+        `http://localhost:3000/auth/login`,
+        // `https://expenser-backend-production.up.railway.app/auth/login`,
         {
           email,
           password,
