@@ -6,7 +6,8 @@ async function findUser(setUser) {
 
     if (user) {
       const response = await axios.get(
-        `http://localhost:3000/auth?user=${user}`
+        // `http://localhost:3000/auth?user=${user}`
+        `https://expenser-backend-production.up.railway.app/auth?user=${user}`
       );
       setUser(response.data.user);
     } else {

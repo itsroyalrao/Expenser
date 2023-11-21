@@ -10,11 +10,15 @@ async function addUser(username, email, password, confirmPassword, setMessage) {
       localStorage.setItem("user", email);
       console.log(username, email, password);
 
-      const response = await axios.post(`http://localhost:3000/auth/signup`, {
-        username,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        // `http://localhost:3000/auth/signup`,
+        `https://expenser-backend-production.up.railway.app/auth/signup`,
+        {
+          username,
+          email,
+          password,
+        }
+      );
       console.log(response);
       if (response.data.success) window.location.href = "/";
       else setMessage(response.data.msg);
