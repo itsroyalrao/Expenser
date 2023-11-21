@@ -7,7 +7,7 @@ async function findUser(setUser) {
     if (user) {
       const response = await axios.get(
         // `http://localhost:3000/home?user=${user}`
-        `https://expenser-backend-production.up.railway.app/auth?user=${user}`
+        `https://expenser-backend-production.up.railway.app/home?user=${user}`
       );
       if (response.data.success) {
         if (response.data.user.loggedIn) {

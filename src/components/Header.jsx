@@ -41,7 +41,7 @@ function Header({ user }) {
               {user.username}
             </div>
             <div
-              className="text-[whitesmoke] bg-red-600 px-3 py-2 rounded active:bg-red-700"
+              className="text-[whitesmoke] bg-red-600 px-3 py-2 rounded active:bg-red-700 cursor-pointer"
               onClick={() => logoutUser(user.email)}
             >
               Logout
@@ -62,7 +62,7 @@ function Header({ user }) {
                   {user.username}
                 </div>
                 <div
-                  className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded  active:bg-red-700"
+                  className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded  active:bg-red-700 cursor-pointer"
                   onClick={() => logoutUser(user.email)}
                 >
                   Logout
