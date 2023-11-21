@@ -1,6 +1,6 @@
 import { useState } from "react";
-import logoutUser from "../helper/logoutUser";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function Header({ user }) {
   const onMobile = /Mobi|Android/i.test(navigator.userAgent);
@@ -21,15 +21,17 @@ function Header({ user }) {
             ></i>
             {clicked && (
               <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-[#242424] p-3 rounded-md">
-                <div className="capitalize bg-[#393939] p-2 rounded">
+                <div className="w-full flex justify-center capitalize bg-[#393939] p-2 rounded">
                   {user.username}
                 </div>
-                <div
+                <Link
                   className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded active:bg-red-700"
-                  onClick={() => logoutUser(user.email)}
+                  onClick={() => {
+                    document.cookie = `uid=; expires=Thu, 01 Jan 2000 00:00:00 UTC; path=/;`;
+                  }}
                 >
                   Logout
-                </div>
+                </Link>
               </div>
             )}
           </div>
@@ -40,12 +42,14 @@ function Header({ user }) {
             <div className="capitalize bg-[#393939] p-2 rounded">
               {user.username}
             </div>
-            <div
-              className="text-[whitesmoke] bg-red-600 px-3 py-2 rounded cursor-pointer active:bg-red-700"
-              onClick={() => logoutUser(user.email)}
+            <Link
+              className="text-[whitesmoke] bg-red-600 px-3 py-2 rounded active:bg-red-700"
+              onClick={() => {
+                document.cookie = `uid=; expires=Thu, 01 Jan 2000 00:00:00 UTC; path=/;`;
+              }}
             >
               Logout
-            </div>
+            </Link>
           </div>
           <div className="flex flex-col items-center md:hidden pr-2">
             <i
@@ -58,15 +62,18 @@ function Header({ user }) {
             ></i>
             {clicked && (
               <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-[#242424] p-3 rounded-md">
-                <div className="capitalize bg-[#393939] p-2 rounded">
+                <div className="w-full flex justify-center capitalize bg-[#393939] p-2 rounded">
                   {user.username}
                 </div>
-                <div
-                  className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded cursor-pointer active:bg-red-700"
-                  onClick={() => logoutUser(user.email)}
+                <Link
+                  to={"/login"}
+                  className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded  active:bg-red-700"
+                  onClick={() => {
+                    document.cookie = `uid=; expires=Thu, 01 Jan 2000 00:00:00 UTC; path=/;`;
+                  }}
                 >
                   Logout
-                </div>
+                </Link>
               </div>
             )}
           </div>

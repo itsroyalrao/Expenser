@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
+
 import Header from "../components/Header";
 import findUser from "../helper/findUser";
 
 function Home() {
   const [user, setUser] = useState(null);
-  console.log(user);
 
   useEffect(() => {
     findUser(setUser);
