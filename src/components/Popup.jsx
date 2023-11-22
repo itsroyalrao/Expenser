@@ -13,20 +13,22 @@ function Popup({ showPopup, setShowPopup }) {
       <div
         className={
           onMobile()
-            ? "bg-gray-300 w-[90%] h-[60%] p-[5%] pt-[10%] sm:pt-[15%] shadow-lg shadow-gray-600 flex flex-col justify-between items-center rounded relative sm:w-full sm:h-fit sm:space-y-2"
-            : "bg-gray-300 w-[80%] sm:w-[60%] md:w-[50%] lg:w-[40%] xl:w-[30%] 2xl:w-[20%] h-[70%] px-12 pt-12 pb-6 shadow-lg shadow-gray-600 flex flex-col justify-between items-center cursor-pointer rounded relative"
+            ? "bg-gray-300 w-[90%] h-[60%] p-[5%] sm:pt-[15%] shadow-lg shadow-gray-600 flex flex-col justify-between items-center rounded sm:w-full sm:h-fit sm:space-y-2"
+            : "bg-gray-300 w-[80%] sm:w-[60%] md:w-[50%] lg:w-[40%] xl:w-[30%] 2xl:w-[20%] h-[70%] px-12 py-6 shadow-lg shadow-gray-600 flex flex-col justify-between items-center cursor-pointer rounded"
         }
       >
-        <div
-          className={
-            onMobile()
-              ? "fas fa-times scale-150 absolute top-3 right-3 bg-gradient-to-r from-blue-700 via-purple-700 to-orange-700 bg-clip-text text-transparent sm:top-[15%]"
-              : "fas fa-times scale-150 absolute top-3 right-3 cursor-pointer bg-gradient-to-r from-blue-700 via-purple-700 to-orange-700 bg-clip-text text-transparent "
-          }
-          onClick={() => setShowPopup(!showPopup)}
-        />
-        <div className="bg-gradient-to-r from-blue-700 via-purple-700 to-orange-700 bg-clip-text text-transparent font-bold text-2xl tracking-wide">
-          Add expense
+        <div className="w-full flex justify-between items-center">
+          <div className="bg-gradient-to-r from-blue-700 via-purple-700 to-orange-700 bg-clip-text text-transparent font-bold text-2xl tracking-wide">
+            Add expense
+          </div>
+          <div
+            className={
+              onMobile()
+                ? "fas fa-times scale-150  bg-gradient-to-r from-blue-700 via-purple-700 to-orange-700 bg-clip-text text-transparent"
+                : "fas fa-times scale-150 cursor-pointer bg-gradient-to-r from-blue-700 via-purple-700 to-orange-700 bg-clip-text text-transparent"
+            }
+            onClick={() => setShowPopup(!showPopup)}
+          />
         </div>
         <div className="flex flex-col w-full space-y-1">
           <div className="flex flex-col w-full">
