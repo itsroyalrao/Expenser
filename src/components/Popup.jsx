@@ -31,6 +31,7 @@ function Popup({ showPopup, setShowPopup }) {
               type="text"
               list="expenseTypes"
               className="w-full p-2 outline-none rounded focus:scale-105"
+              autoFocus
             />
             <datalist id="expenseTypes">
               <option value="food" />
