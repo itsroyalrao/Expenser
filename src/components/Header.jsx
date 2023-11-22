@@ -1,16 +1,15 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import logoutUser from "../helper/logoutUser";
+import onMobile from "../helper/onMobile";
 
 function Header({ user }) {
-  const onMobile = /Mobi|Android/i.test(navigator.userAgent);
-
   const [clicked, setClicked] = useState(false);
 
   return (
     <div className="w-full flex items-center justify-between bg-blue-600 text-[whitesmoke] px-4 md:px-12 sticky top-0">
       <div className="text-3xl py-3">Xpenser</div>
-      {onMobile ? (
+      {onMobile() ? (
         <>
           <div className="flex flex-col items-center pr-2">
             <i
