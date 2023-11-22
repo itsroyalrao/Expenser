@@ -39,7 +39,7 @@ function Home() {
           </div>
           {showPopup && (
             <>
-              <div className="w-[100dvw] h-[100dvh] fixed top-0 flex justify-center items-center z-10 bg-slate-600 opacity-75" />
+              <div className="w-[100dvw] h-full fixed top-0 flex justify-center items-center z-10 bg-slate-600 opacity-75" />
               <Popup showPopup={showPopup} setShowPopup={setShowPopup} />
             </>
           )}
