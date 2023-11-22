@@ -16,13 +16,13 @@ function Home() {
       {user && (
         <div className="w-full h-fit min-h-[100dvh] flex flex-col text-xl bg-gray-300">
           <Header user={user} />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 p-2 mt-16">
-            <Card title={"one"} />
-            <Card title={"one"} />
-            <Card title={"one"} />
-            <Card title={"one"} />
-            <Card title={"one"} />
-            <Card title={"one"} />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 p-2">
+            <Card title={"add expense"} />
+            <Card title={"total expense"} />
+            <Card title={"average daily expense"} />
+            <Card title={"average weekly expense"} />
+            <Card title={"average monthly expense"} />
+            <Card title={"average yearly expense"} />
           </div>
         </div>
       )}

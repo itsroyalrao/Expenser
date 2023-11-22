@@ -8,7 +8,7 @@ function Header({ user }) {
   const [clicked, setClicked] = useState(false);
 
   return (
-    <div className="w-full flex items-center justify-between bg-blue-600 text-[whitesmoke] px-4 md:px-12 fixed top-0">
+    <div className="w-full flex items-center justify-between bg-blue-600 text-[whitesmoke] px-4 md:px-12 sticky top-0">
       <div className="text-3xl py-3">Xpenser</div>
       {onMobile ? (
         <>
