@@ -14,6 +14,15 @@ function Home() {
     findUser(setUser);
   }, []);
 
+  useEffect(() => {
+    if (showPopup) document.body.classList.add("overflow-hidden");
+    else document.body.classList.remove("overflow-hidden");
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [showPopup]);
+
   return (
     <>
       {user && (
@@ -39,7 +48,7 @@ function Home() {
           </div>
           {showPopup && (
             <>
-              <div className="w-[100dvw] h-full fixed top-0 flex justify-center items-center z-10 bg-slate-600 opacity-75" />
+              <div className="w-[100dvw] h-full fixed top-0 flex justify-center items-center z-10 bg-slate-600 opacity-75 overflow-hidden" />
               <Popup showPopup={showPopup} setShowPopup={setShowPopup} />
             </>
           )}
