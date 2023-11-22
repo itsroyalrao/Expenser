@@ -6,7 +6,7 @@ function Popup({ showPopup, setShowPopup }) {
     <div
       className={
         onMobile
-          ? "w-[100dvw] h-[100svh] sm:h-fit sm:min-h-[100svh] fixed top-0 flex justify-center items-center z-20 overflow-auto"
+          ? "w-[100dvw] h-[100dvh] sm:h-fit sm:min-h-[100dvh] fixed top-0 flex justify-center items-center z-20 overflow-auto"
           : "w-[100dvw] h-[100dvh] fixed top-0 flex justify-center items-center z-20 overflow-auto"
       }
     >
