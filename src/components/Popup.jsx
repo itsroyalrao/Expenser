@@ -20,7 +20,7 @@ function Popup({ showPopup, setShowPopup }) {
         <div
           className={
             onMobile()
-              ? "fas fa-times scale-150 absolute top-3 right-3 bg-gradient-to-r from-blue-700 via-purple-700 to-orange-700 bg-clip-text text-transparent sm:t-[25%]"
+              ? "fas fa-times scale-150 absolute top-3 right-3 bg-gradient-to-r from-blue-700 via-purple-700 to-orange-700 bg-clip-text text-transparent sm:top-[15%]"
               : "fas fa-times scale-150 absolute top-3 right-3 cursor-pointer bg-gradient-to-r from-blue-700 via-purple-700 to-orange-700 bg-clip-text text-transparent "
           }
           onClick={() => setShowPopup(!showPopup)}
