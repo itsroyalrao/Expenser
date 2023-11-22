@@ -12,7 +12,8 @@ function Card({ title }) {
               ? "fas fa-ellipsis-v flex items-center"
               : "fas fa-ellipsis-v cursor-pointer px-2 hover:bg-gray-300 flex items-center rounded-full"
           }
-        ></div>
+          onClick={() => {}}
+        />
       </div>
     </div>
   );
@@ -20,6 +21,8 @@ function Card({ title }) {
 
 Card.propTypes = {
   title: PropTypes.string,
+  showPopup: PropTypes.bool,
+  setShowPopup: PropTypes.func,
 };
 
 export default Card;
