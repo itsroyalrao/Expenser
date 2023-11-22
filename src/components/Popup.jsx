@@ -3,11 +3,11 @@ import onMobile from "../helper/onMobile";
 
 function Popup({ showPopup, setShowPopup }) {
   return (
-    <div className="w-[100dvw] h-[100dvh] fixed top-0 flex justify-center items-center z-20">
+    <div className="w-[100dvw] h-[100dvh] fixed top-0 flex justify-center items-center z-20 overflow-auto">
       <div
         className={
           onMobile()
-            ? "bg-gray-300 w-[90%] h-[60%] p-[5%] pt-[10%] shadow-lg shadow-gray-600 flex flex-col justify-between items-center rounded relative md:w-[60%] md:h-[90%]"
+            ? "bg-gray-300 w-[90%] h-[60%] p-[5%] pt-[10%] shadow-lg shadow-gray-600 flex flex-col justify-between items-center rounded relative sm:w-full sm:h-fit sm:space-y-2"
             : "bg-gray-300 w-[80%] sm:w-[60%] md:w-[50%] lg:w-[40%] xl:w-[30%] 2xl:w-[20%] h-[70%] px-12 pt-12 pb-6 shadow-lg shadow-gray-600 flex flex-col justify-between items-center cursor-pointer rounded relative"
         }
       >
