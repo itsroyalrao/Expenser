@@ -25,7 +25,7 @@ function Popup({ showPopup, setShowPopup }) {
         <div className="flex flex-col w-full space-y-1">
           <div
             className={
-              onMobile ? "flex flex-col md:flex-row w-full" : "flex flex-col w-full"
+              onMobile ? "flex flex-col md:flex-row w-full md:w-fit" : "flex flex-col w-full"
             }
           >
             <div className="bg-gradient-to-r from-blue-700 via-purple-700 to-orange-700 bg-clip-text text-transparent w-fit">
