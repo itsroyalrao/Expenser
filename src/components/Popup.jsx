@@ -23,7 +23,6 @@ function Popup({ showPopup, setShowPopup }) {
               type="text"
               list="expenseTypes"
               className="w-full p-2 outline-none rounded"
-              placeholder="Type of expense"
             />
             <datalist id="expenseTypes">
               <option value="food" />
@@ -34,7 +33,7 @@ function Popup({ showPopup, setShowPopup }) {
           </div>
           <div className="flex flex-col w-full">
             <div className="bg-gradient-to-r from-blue-700 via-purple-700 to-orange-700 bg-clip-text text-transparent w-fit">Amount</div>
-            <input type="text" className="w-full p-2 outline-none rounded" />
+            <input type="number" className="w-full p-2 outline-none rounded" />
           </div>
           <div className="flex flex-col w-full">
             <div className="bg-gradient-to-r from-blue-700 via-purple-700 to-orange-700 bg-clip-text text-transparent w-fit">Description</div>
