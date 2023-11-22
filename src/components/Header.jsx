@@ -8,7 +8,7 @@ function Header({ user }) {
   const [clicked, setClicked] = useState(false);
 
   return (
-    <div className="w-full flex items-center justify-between bg-[#202020] text-[whitesmoke] px-4 md:px-12">
+    <div className="w-full flex items-center justify-between bg-blue-600 text-[whitesmoke] px-4 md:px-12 sticky top-0">
       <div className="text-3xl py-3">Xpenser</div>
       {onMobile ? (
         <>
@@ -20,8 +20,8 @@ function Header({ user }) {
               onClick={() => setClicked(!clicked)}
             ></i>
             {clicked && (
-              <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-[#242424] p-3 rounded-md">
-                <div className="w-full flex justify-center capitalize bg-[#393939] p-2 rounded">
+              <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-gray-300 p-3 rounded-md">
+                <div className="w-full flex justify-center capitalize bg-white text-blue-600 font-bold p-2 rounded">
                   {user.username}
                 </div>
                 <div
@@ -37,7 +37,7 @@ function Header({ user }) {
       ) : (
         <>
           <div className="hidden md:flex md:items-center md:space-x-3">
-            <div className="capitalize bg-[#393939] p-2 rounded">
+            <div className="capitalize bg-white text-blue-600 font-bold p-2 rounded">
               {user.username}
             </div>
             <div
@@ -47,18 +47,18 @@ function Header({ user }) {
               Logout
             </div>
           </div>
-          <div className="flex flex-col items-center md:hidden pr-2">
+          <div className="flex flex-col items-center md:hidden">
             <i
               className={
                 clicked
-                  ? "fas fa-times scale-125 cursor-pointer"
-                  : "fas fa-bars scale-125 cursor-pointer"
+                  ? "fas fa-times scale-125 cursor-pointer hover:bg-white p-2 rounded hover:text-blue-600"
+                  : "fas fa-bars scale-125 cursor-pointer hover:bg-white p-2 rounded hover:text-blue-600"
               }
               onClick={() => setClicked(!clicked)}
             ></i>
             {clicked && (
-              <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-[#242424] p-3 rounded-md">
-                <div className="w-full flex justify-center capitalize bg-[#393939] p-2 rounded">
+              <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-gray-300 p-3 rounded-md">
+                <div className="w-full flex justify-center capitalize bg-white text-blue-600 font-bold p-2 rounded">
                   {user.username}
                 </div>
                 <div

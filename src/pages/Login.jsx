@@ -41,7 +41,7 @@ function Login() {
               <div className="text-red-500 flex justify-center">{message}</div>
             )}
             <button
-              className="w-full bg-blue-600 flex justify-center py-2 rounded-lg text-white text-xl"
+              className="w-full bg-blue-600 flex justify-center py-2 rounded-lg text-white text-xl hover:bg-blue-700 focus:scale-105"
               onClick={() => getUser(email, password, setMessage)}
             >
               Login
