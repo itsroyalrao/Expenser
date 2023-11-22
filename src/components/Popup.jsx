@@ -16,7 +16,7 @@ function Popup({ showPopup, setShowPopup }) {
         <div className="bg-gradient-to-r from-blue-700 via-purple-700 to-orange-700 bg-clip-text text-transparent font-bold text-2xl tracking-wide">
           Add expense
         </div>
-        <div className="flex flex-col w-full space-y-2">
+        <div className="flex flex-col w-full space-y-1">
           <div className="flex flex-col w-full">
             <div className="bg-gradient-to-r from-blue-700 via-purple-700 to-orange-700 bg-clip-text text-transparent w-fit">Expense type</div>
             <input
@@ -40,7 +40,7 @@ function Popup({ showPopup, setShowPopup }) {
             <input type="text" className="w-full p-2 outline-none rounded" />
           </div>
         </div>
-        <div className="bg-gradient-to-br from-blue-600 via-purple-600 to-orange-600 p-2 flex justify-center text-[whitesmoke] text-lg font-bold tracking-wider rounded">
+        <div className="w-full bg-gradient-to-br from-blue-600 via-purple-600 to-orange-600 p-2 flex justify-center text-[whitesmoke] text-lg font-bold tracking-wider rounded">
           Save
         </div>
       </div>
