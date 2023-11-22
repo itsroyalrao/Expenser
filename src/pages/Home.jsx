@@ -40,8 +40,8 @@ function Home() {
             <div
               className={
                 onMobile()
-                  ? "fas fa-plus bg-blue-600 w-fit px-4 py-[15px] text-white rounded-full fixed bottom-4 right-4"
-                  : "fas fa-plus bg-blue-600 w-fit px-4 py-[15px] text-white rounded-full cursor-pointer hover:bg-blue-700 fixed bottom-4 right-4"
+                  ? "fas fa-plus bg-gradient-to-br from-blue-600 via-purple-600 to-orange-600 w-fit px-4 py-[15px] text-white rounded-full fixed bottom-4 right-4"
+                  : "fas fa-plus bg-gradient-to-br from-blue-600 via-purple-600 to-orange-600 w-fit px-4 py-[15px] text-white rounded-full cursor-pointer hover:bg-blue-700 fixed bottom-4 right-4"
               }
               onClick={() => setShowPopup(!showPopup)}
             />
