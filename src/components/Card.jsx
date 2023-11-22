@@ -4,13 +4,13 @@ import onMobile from "../helper/onMobile";
 function Card({ title }) {
   return (
     <div className="bg-[whitesmoke] h-72 rounded flex flex-col items-center">
-      <div className="w-full flex justify-between px-4 py-3 capitalize">
+      <div className="w-full flex justify-between px-4 py-2 capitalize">
         {title}
         <div
           className={
             onMobile()
-              ? "fas fa-ellipsis-v px-2 flex items-center"
-              : "fas fa-ellipsis-v cursor-pointer p-2 hover:bg-gray-300 hover:text-white flex items-center rounded-full"
+              ? "fas fa-ellipsis-v flex items-center"
+              : "fas fa-ellipsis-v cursor-pointer px-2 hover:bg-gray-300 flex items-center rounded-full"
           }
         ></div>
       </div>
