@@ -12,8 +12,8 @@ function Card({ email, title, total, setTotal }) {
   const [showOptions, setShowOptions] = useState(false);
 
   return (
-    <div className="bg-[whitesmoke] h-72 rounded flex flex-col items-center relative">
-      <div className="w-full flex justify-between px-4 py-2 capitalize">
+    <div className="bg-[whitesmoke] h-72 rounded flex flex-col items-center py-2 relative">
+      <div className="w-full flex justify-between px-4 pb-2 capitalize">
         {title}
         <div
           className={
