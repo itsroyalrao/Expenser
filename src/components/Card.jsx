@@ -1,8 +1,14 @@
 import PropTypes from "prop-types";
-import onMobile from "../helper/onMobile";
 import { useState } from "react";
+import onMobile from "../helper/onMobile";
+import TodaysExpense from "./TodaysExpense";
+import TotalExpense from "./TotalExpense";
+import DailyExpense from "./DailyExpense";
+import WeeklyExpense from "./WeeklyExpense";
+import MonthlyExpense from "./MonthlyExpense";
+import YearlyExpense from "./YearlyExpense";
 
-function Card({ title }) {
+function Card({ email, title, total, setTotal }) {
   const [showOptions, setShowOptions] = useState(false);
 
   return (
@@ -27,14 +33,29 @@ function Card({ title }) {
           <div className="bg-red-600 p-2 text-white rounded">Remove card</div>
         </div>
       )}
+
+      {title === "today's expense" ? (
+        <TodaysExpense email={email} />
+      ) : title === "total expense" ? (
+        <TotalExpense email={email} total={total} setTotal={setTotal} />
+      ) : title === "average daily expense" ? (
+        <DailyExpense email={email} />
+      ) : title === "average weekly expense" ? (
+        <WeeklyExpense email={email} />
+      ) : title === "average monthly expense" ? (
+        <MonthlyExpense email={email} />
+      ) : (
+        <YearlyExpense email={email} />
+      )}
     </div>
   );
 }
 
 Card.propTypes = {
   title: PropTypes.string,
-  showPopup: PropTypes.bool,
-  setShowPopup: PropTypes.func,
+  email: PropTypes.string,
+  total: PropTypes.number,
+  setTotal: PropTypes.func,
 };
 
 export default Card;

@@ -1,7 +1,14 @@
 import PropTypes from "prop-types";
 import onMobile from "../helper/onMobile";
+import { useState } from "react";
 
-function Popup({ showPopup, setShowPopup }) {
+import addExpense from "../helper/addExpense";
+
+function Popup({ showPopup, setShowPopup, email, setTotal }) {
+  const [expenseType, setExpenseType] = useState("");
+  const [amount, setAmount] = useState("");
+  const [description, setDescription] = useState("");
+
   return (
     <div
       className={
@@ -40,6 +47,8 @@ function Popup({ showPopup, setShowPopup }) {
               list="expenseTypes"
               className="w-full p-2 outline-none rounded focus:scale-105"
               autoFocus
+              value={expenseType}
+              onChange={(e) => setExpenseType(e.target.value)}
             />
             <datalist id="expenseTypes">
               <option value="Food" />
@@ -55,6 +64,8 @@ function Popup({ showPopup, setShowPopup }) {
             <input
               type="number"
               className="w-full p-2 outline-none rounded focus:scale-105"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
             />
           </div>
           <div className="flex flex-col w-full">
@@ -64,6 +75,8 @@ function Popup({ showPopup, setShowPopup }) {
             <textarea
               type="text"
               className="w-full p-2 outline-none rounded focus:scale-105"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
           </div>
         </div>
@@ -71,8 +84,15 @@ function Popup({ showPopup, setShowPopup }) {
           className={
             onMobile()
               ? "w-full bg-gradient-to-br from-blue-600 via-purple-600 to-orange-600 p-2 flex justify-center text-[whitesmoke] text-lg font-bold tracking-wider rounded active:scale-105"
-              : "w-full bg-gradient-to-br from-blue-600 via-purple-600 to-orange-600 p-2 flex justify-center text-[whitesmoke] text-lg font-bold tracking-wider rounded  hover:scale-105"
+              : "w-full bg-gradient-to-br from-blue-600 via-purple-600 to-orange-600 p-2 flex justify-center text-[whitesmoke] text-lg font-bold tracking-wider rounded  hover:scale-105 focus:scale-105"
           }
+          onClick={() => {
+            addExpense(expenseType, amount, description, email, setTotal);
+
+            setExpenseType("");
+            setAmount("");
+            setDescription("");
+          }}
         >
           Save
         </button>
@@ -84,6 +104,8 @@ function Popup({ showPopup, setShowPopup }) {
 Popup.propTypes = {
   showPopup: PropTypes.bool,
   setShowPopup: PropTypes.func,
+  email: PropTypes.string,
+  setTotal: PropTypes.func,
 };
 
 export default Popup;
