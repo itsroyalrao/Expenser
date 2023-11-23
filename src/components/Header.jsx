@@ -7,7 +7,7 @@ function Header({ user }) {
   const [clicked, setClicked] = useState(false);
 
   return (
-    <div className="w-full flex items-center justify-between bg-gradient-to-br from-blue-600 via-purple-600 to-orange-300 text-[whitesmoke] px-4 md:px-12 sticky top-0">
+    <div className="w-full flex items-center justify-between bg-blue-600 text-[whitesmoke] px-4 md:px-12 sticky top-0 z-20">
       <div className="text-3xl py-3">Xpenser</div>
       {onMobile() ? (
         <>
@@ -36,7 +36,7 @@ function Header({ user }) {
       ) : (
         <>
           <div className="hidden md:flex md:items-center md:space-x-3">
-            <div className="capitalize bg-blue-600 p-2 rounded">
+            <div className="capitalize bg-white text-blue-600 p-2 rounded">
               {user.username}
             </div>
             <div
