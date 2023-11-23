@@ -10,8 +10,8 @@ async function addExpense(expenseType, amount, description, email, setTotal) {
   };
   try {
     const response = await axios.post(
-      `http://localhost:3000/home/addExpense`,
-      // `https://expenser-backend-production.up.railway.app/home/addExpense`,
+      // `http://localhost:3000/home/addExpense`,
+      `https://expenser-backend-production.up.railway.app/home/addExpense`,
       expenseData
     );
     setTotal(response.data.result.totalAmount);
