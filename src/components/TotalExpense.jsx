@@ -10,10 +10,13 @@ function TotalExpense({ email, total, setTotal }) {
   return (
     <>
       {total && (
-        <div className="w-full grow flex justify-center items-center">
-          <div className="fas fa-inr bg-green-600 text-white px-6 py-4 rounded-md">
-            {" "}
-            {total}
+        <div className="w-full grow flex flex-col">
+          <div className="w-full flex justify-between items-center bg-blue-500 text-white px-4 py-2">
+            <div className="flex justify-center items-center">
+              <div>Amount &nbsp; = &nbsp;</div>
+              <div className="fas fa-inr text-base tracking-wider">{total}</div>
+            </div>
+            <div className="fas fa-sort"></div>
           </div>
         </div>
       )}
