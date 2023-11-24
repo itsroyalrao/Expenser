@@ -1,12 +1,15 @@
 import PropTypes from "prop-types";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import totalExpense from "../helper/totalExpense";
+import totalExpense from "../helper/allExpenses";
 
 function TotalExpense({ email, total, setTotal }) {
+  const [showExpenses, setShowExpenses] = useState([]);
+  console.log(showExpenses);
+
   useEffect(() => {
-    totalExpense(email, setTotal);
+    totalExpense(email, setTotal, setShowExpenses);
   }, [email, setTotal]);
 
   return (
@@ -22,18 +25,24 @@ function TotalExpense({ email, total, setTotal }) {
           </div>
           <Link
             to={"/totalExpensePage"}
-            className="grid gap-1 p-2 cursor-pointer"
+            className="grid px-5 py-2 cursor-pointer"
           >
-            <div className="bg-slate-600 p-2 rounded">one</div>
-            <div className="bg-slate-600 p-2 rounded">two</div>
-            <div className="bg-slate-600 p-2 rounded">three</div>
-            <div className="bg-slate-600 p-2 rounded">four</div>
-            <div className="bg-slate-600 p-2 rounded">five</div>
-            <div className="bg-slate-600 p-2 rounded">six</div>
-            <div className="bg-slate-600 p-2 rounded">seven</div>
-            <div className="bg-slate-600 p-2 rounded">eight</div>
-            <div className="bg-slate-600 p-2 rounded">nine</div>
-            <div className="bg-slate-600 p-2 rounded">ten</div>
+            <div className="w-full grid grid-cols-3">
+              <div className="border px-2 overflow-hidden">S.no</div>
+              <div className="border px-2 overflow-hidden">Amount</div>
+              <div className="border px-2 overflow-hidden">Type</div>
+            </div>
+            {showExpenses.map((expense, i) => (
+              <div key={expense._id} className="grid grid-cols-3">
+                <div className="border px-2 overflow-hidden">{i + 1 + "."}</div>
+                <div className="border px-2 overflow-hidden">
+                  {expense.amount}
+                </div>
+                <div className="border px-2 overflow-hidden">
+                  {expense.expenseType}
+                </div>
+              </div>
+            ))}
           </Link>
         </div>
       )}
