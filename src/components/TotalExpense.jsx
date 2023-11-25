@@ -2,14 +2,14 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import totalExpense from "../helper/allExpenses";
+import allExpenses from "../helper/allExpenses";
 
 function TotalExpense({ email, total, setTotal }) {
   const [showExpenses, setShowExpenses] = useState([]);
   console.log(showExpenses);
 
   useEffect(() => {
-    totalExpense(email, setTotal, setShowExpenses);
+    allExpenses(email, setTotal, setShowExpenses, "totalExpense");
   }, [email, setTotal]);
 
   return (

@@ -13,7 +13,7 @@ function Card({ email, title, total, setTotal }) {
 
   return (
     <div className="bg-[whitesmoke] h-72 rounded flex flex-col items-center py-2 relative">
-      <div className="w-full flex justify-between px-4 pb-2 capitalize">
+      <div className="w-full flex justify-between px-4 pb-2 font-bold capitalize tracking-wide text-green-600">
         {title}
         <div
           className={
