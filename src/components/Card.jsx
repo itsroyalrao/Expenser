@@ -29,7 +29,7 @@ function Card({ email, title, total, setTotal }) {
         />
       </div>
       {showOptions && (
-        <div className="absolute right-0 top-10 bg-gray-300 p-3 rounded-s">
+        <div className="absolute right-0 top-10 bg-gray-300 p-3 rounded-s z-20">
           <div className="bg-red-600 p-2 text-white rounded">Remove card</div>
         </div>
       )}
