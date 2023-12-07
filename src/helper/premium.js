@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// const user = localStorage.getItem("user");
+const user = localStorage.getItem("user");
 
 const loadRazorpay = async () => {
   const script = document.createElement("script");
@@ -34,7 +34,7 @@ const displayRazorpay = async (setPremiumStatus) => {
             // "http://localhost:3000/payment",
             "https://expenser-backend-production.up.railway.app/payment",
             {
-              user: "a",
+              user,
               status: "success",
               paymentId: response.razorpay_payment_id,
               orderId,
@@ -61,8 +61,8 @@ const displayRazorpay = async (setPremiumStatus) => {
 const getPremiumStatus = async (setPremiumStatus) => {
   try {
     const response = await axios.get(
-      // `http://localhost:3000/payment/status?user=${"a"}`
-      `https://expenser-backend-production.up.railway.app/payment/status?user=${"a"}`
+      // `http://localhost:3000/payment/status?user=${user}`
+      `https://expenser-backend-production.up.railway.app/payment/status?user=${user}`
     );
 
     if (response.data.success) {
