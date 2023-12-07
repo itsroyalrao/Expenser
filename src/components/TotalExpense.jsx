@@ -6,7 +6,6 @@ import allExpenses from "../helper/allExpenses";
 
 function TotalExpense({ email, total, setTotal }) {
   const [showExpenses, setShowExpenses] = useState([]);
-  console.log(showExpenses);
 
   useEffect(() => {
     allExpenses(email, setTotal, setShowExpenses, "totalExpense");

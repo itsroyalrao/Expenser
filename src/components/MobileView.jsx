@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { displayRazorpay } from "../helper/displayRazorpay";
+import { displayRazorpay } from "../helper/premium";
 
-function MobileView({ clicked, setClicked }) {
+function MobileView({ premiumStatus, clicked, setClicked, setPremiumStatus }) {
   return (
-    <div className="flex justify-between items-center bg-[rgb(0,94,72)] px-5 py-4 sticky top-0 text-lg">
+    <div className="flex justify-between items-center bg-green-600 text-white px-5 py-4 sticky top-0 text-lg">
       <div className="text-xl font-bold tracking-wide">Xpenser</div>
       <div className="flex flex-col items-center pr-2">
         <i
@@ -50,14 +50,18 @@ function MobileView({ clicked, setClicked }) {
             <Link
               className="flex justify-center text-[whitesmoke] bg-blue-600 px-3 py-2 rounded active:bg-blue-700"
               onClick={() => {
-                displayRazorpay();
+                if (premiumStatus === "Upgrade")
+                  displayRazorpay(setPremiumStatus);
               }}
             >
-              Upgrade
+              {premiumStatus}
             </Link>
             <Link
               to={"/login"}
               className="flex justify-center text-[whitesmoke] bg-red-600 px-3 py-2 rounded active:bg-red-700"
+              onClick={() => {
+                localStorage.clear();
+              }}
             >
               Logout
             </Link>
@@ -69,8 +73,10 @@ function MobileView({ clicked, setClicked }) {
 }
 
 MobileView.propTypes = {
+  premiumStatus: PropTypes.string,
   clicked: PropTypes.bool,
   setClicked: PropTypes.func,
+  setPremiumStatus: PropTypes.func,
 };
 
 export default MobileView;

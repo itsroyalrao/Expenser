@@ -1,7 +1,6 @@
 import axios from "axios";
 
 async function addExpense(expenseType, amount, description, email, setTotal) {
-  console.log(expenseType, amount, description, email);
   const expenseData = {
     expenseType,
     amount,
@@ -10,11 +9,14 @@ async function addExpense(expenseType, amount, description, email, setTotal) {
   };
   try {
     const response = await axios.post(
-      `http://localhost:3000/home/addExpense`,
-      // `https://expenser-backend-production.up.railway.app/home/addExpense`,
+      // `http://localhost:3000/home/addExpense`,
+      `https://expenser-backend-production.up.railway.app/home/addExpense`,
       expenseData
     );
-    setTotal(response.data.result.totalAmount);
+    if (response.data.success) {
+      setTotal(response.data.result.totalAmount);
+      window.location.href = "/";
+    }
   } catch (e) {
     console.log(e);
   }

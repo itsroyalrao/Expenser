@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useState } from "react";
-
-import addUser from "../helper/addUser";
+import { addUser } from "../helper/auth";
 
 function Signup() {
   const [username, setUsername] = useState("");

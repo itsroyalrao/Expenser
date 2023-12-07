@@ -15,7 +15,7 @@ function Card({ email, title, total, setTotal }) {
     <div className="bg-[#323232] h-72 rounded flex flex-col items-center py-2 relative">
       <div className="w-full flex justify-between px-4 pb-2 font-bold capitalize tracking-wide text-green-600">
         {title}
-        <div
+        {/* <div
           className={
             onMobile()
               ? showOptions
@@ -26,13 +26,13 @@ function Card({ email, title, total, setTotal }) {
               : "fas fa-ellipsis-v cursor-pointer px-3 hover:bg-gray-300 flex items-center rounded-full"
           }
           onClick={() => setShowOptions(!showOptions)}
-        />
+        /> */}
       </div>
-      {showOptions && (
+      {/* {showOptions && (
         <div className="absolute right-0 top-10 bg-gray-300 p-3 rounded-s z-20">
           <div className="bg-red-600 p-2 text-white rounded">Remove card</div>
         </div>
-      )}
+      )} */}
 
       {title === "today's expense" ? (
         <TodaysExpense email={email} />
