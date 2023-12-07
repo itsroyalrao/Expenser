@@ -1,82 +1,100 @@
-import { useState } from "react";
-import PropTypes from "prop-types";
-import logoutUser from "../helper/logoutUser";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import onMobile from "../helper/onMobile";
+import MobileView from "./MobileView";
+import { displayRazorpay, loadRazorpay } from "../helper/displayRazorpay";
 
-function Header({ user }) {
+function Header() {
+  const loc = useLocation();
+  const pageName = loc.pathname.replace("/", "");
+
   const [clicked, setClicked] = useState(false);
 
+  useEffect(() => {
+    loadRazorpay();
+  }, []);
+
   return (
-    <div className="w-full flex items-center justify-between bg-blue-600 text-[whitesmoke] px-4 md:px-12 sticky top-0 z-20">
-      <div className="text-3xl py-3">Xpenser</div>
+    <>
       {onMobile() ? (
-        <>
-          <div className="flex flex-col items-center pr-2">
-            <i
-              className={
-                clicked ? "fas fa-times scale-125" : "fas fa-bars scale-125"
-              }
-              onClick={() => setClicked(!clicked)}
-            ></i>
-            {clicked && (
-              <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-gray-300 p-3 rounded-md">
-                <div className="w-full flex justify-center capitalize bg-blue-600 p-2 rounded">
-                  {user.username}
-                </div>
-                <div
-                  className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded active:bg-red-700"
-                  onClick={() => logoutUser(user.email)}
-                >
-                  Logout
-                </div>
-              </div>
-            )}
-          </div>
-        </>
+        <div className="z-20 sticky top-0">
+          <MobileView clicked={clicked} setClicked={setClicked} />
+        </div>
       ) : (
         <>
-          <div className="hidden md:flex md:items-center md:space-x-3">
-            <div className="capitalize bg-white text-blue-600 p-2 rounded">
-              {user.username}
+          <div className="hidden lg:flex justify-between items-center bg-[rgb(0,94,72)] px-9 text-lg sticky top-0 z-20">
+            <div className="flex items-center space-x-9">
+              <div className="text-xl font-bold tracking-wide">Xpenser</div>
+              <div className="flex space-x-9 py-4">
+                <Link
+                  to={"/"}
+                  className={`hover:text-yellow-400 ${
+                    pageName === "" ? "text-yellow-400" : ""
+                  }`}
+                >
+                  Home
+                </Link>
+                <Link
+                  to={"/daily"}
+                  className={`hover:text-yellow-400 ${
+                    pageName === "daily" ? "text-yellow-400" : ""
+                  }`}
+                >
+                  Daily
+                </Link>
+                <Link
+                  to={"/weekly"}
+                  className={`hover:text-yellow-400 ${
+                    pageName === "weekly" ? "text-yellow-400" : ""
+                  }`}
+                >
+                  Weekly
+                </Link>
+                <Link
+                  to={"/monthly"}
+                  className={`hover:text-yellow-400 ${
+                    pageName === "monthly" ? "text-yellow-400" : ""
+                  }`}
+                >
+                  Monthly
+                </Link>
+                {/* <Link
+                  to={"/total"}
+                  className={`hover:text-yellow-400 ${
+                    pageName === "total" ? "text-yellow-400" : ""
+                  }`}
+                >
+                  Total
+                </Link> */}
+              </div>
             </div>
-            <div
-              className="text-[whitesmoke] bg-red-600 px-3 py-2 rounded active:bg-red-700 cursor-pointer"
-              onClick={() => logoutUser(user.email)}
-            >
-              Logout
+            <div className="flex items-center space-x-2">
+              <div
+                className="bg-blue-500 px-4 py-2 cursor-pointer rounded"
+                onClick={() => {
+                  displayRazorpay();
+                }}
+              >
+                Upgrade
+              </div>
+              <Link
+                to={"/login"}
+                className="bg-red-500 px-4 py-2 rounded"
+                onClick={() => {
+                  localStorage.clear();
+                }}
+              >
+                Logout
+              </Link>
             </div>
           </div>
-          <div className="flex flex-col items-center md:hidden">
-            <i
-              className={
-                clicked
-                  ? "fas fa-times scale-125 cursor-pointer hover:bg-white p-2 rounded hover:text-blue-600"
-                  : "fas fa-bars scale-125 cursor-pointer hover:bg-white p-2 rounded hover:text-blue-600"
-              }
-              onClick={() => setClicked(!clicked)}
-            ></i>
-            {clicked && (
-              <div className="flex flex-col items-center space-y-2 fixed top-16 right-0 bg-gray-300 p-3 rounded-md">
-                <div className="w-full flex justify-center capitalize bg-blue-600 p-2 rounded">
-                  {user.username}
-                </div>
-                <div
-                  className="w-full text-[whitesmoke] bg-red-600 px-3 py-2 rounded  active:bg-red-700 cursor-pointer"
-                  onClick={() => logoutUser(user.email)}
-                >
-                  Logout
-                </div>
-              </div>
-            )}
+          <div className="lg:hidden px-4 bg-[rgb(0,94,72)]  z-20 sticky top-0">
+            <MobileView clicked={clicked} setClicked={setClicked} />
           </div>
         </>
       )}
-    </div>
+    </>
   );
 }
-
-Header.propTypes = {
-  user: PropTypes.object,
-};
 
 export default Header;

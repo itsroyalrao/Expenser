@@ -4,7 +4,10 @@ import axios from "axios";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import TotalExpense from "./pages/TotalExpense";
+import Total from "./pages/Total";
+import Daily from "./pages/Daily";
+import Weekly from "./pages/Weekly";
+import Monthly from "./pages/Monthly";
 
 function App() {
   axios.defaults.withCredentials = true;
@@ -13,9 +16,12 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/daily" element={<Daily />} />
+        <Route path="/weekly" element={<Weekly />} />
+        <Route path="/monthly" element={<Monthly />} />
+        <Route path="/total" element={<Total />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/totalExpensePage" element={<TotalExpense />} />
       </Routes>
     </Router>
   );

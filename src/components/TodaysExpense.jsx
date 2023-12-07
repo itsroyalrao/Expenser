@@ -14,7 +14,7 @@ function TodaysExpense({ email }) {
   return (
     <>
       {amount && (
-        <div className="w-full grow flex flex-col overflow-hidden relative">
+        <div className="w-full grow flex flex-col overflow-auto relative">
           <div className="w-full flex justify-between items-center bg-blue-500 text-white px-4 py-2 sticky top-0">
             <div className="flex justify-center items-center">
               <div>Amount &nbsp; = &nbsp;</div>
@@ -24,6 +24,7 @@ function TodaysExpense({ email }) {
             </div>
             <div className="fas fa-sort"></div>
           </div>
+
           <Link
             to={"/totalExpensePage"}
             className="grid px-5 py-2 cursor-pointer"
