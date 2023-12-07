@@ -1,5 +1,7 @@
 import axios from "axios";
 
+// const user = localStorage.getItem("user");
+
 const loadRazorpay = async () => {
   const script = document.createElement("script");
   script.src = "https://checkout.razorpay.com/v1/checkout.js";
@@ -11,12 +13,10 @@ const loadRazorpay = async () => {
 
 const displayRazorpay = async (setPremiumStatus) => {
   try {
-    const user = localStorage.getItem("user");
-
     if (window.Razorpay) {
       const response = await axios.get(
-        // "http://localhost:3000/payment"
-        "https://expenser-backend-production.up.railway.app/payment"
+        "http://localhost:3000/payment"
+        // "https://expenser-backend-production.up.railway.app/payment"
       );
       const orderId = response.data.order.id;
       const amount = response.data.amount;
@@ -34,7 +34,7 @@ const displayRazorpay = async (setPremiumStatus) => {
             // "http://localhost:3000/payment",
             "https://expenser-backend-production.up.railway.app/payment",
             {
-              user,
+              user: "a",
               status: "success",
               paymentId: response.razorpay_payment_id,
               orderId,
@@ -60,11 +60,9 @@ const displayRazorpay = async (setPremiumStatus) => {
 
 const getPremiumStatus = async (setPremiumStatus) => {
   try {
-    const user = localStorage.getItem("user");
-
     const response = await axios.get(
-      // `http://localhost:3000/payment/status?user=${user}`
-      `https://expenser-backend-production.up.railway.app/payment/status?user=${user}`
+      // `http://localhost:3000/payment/status?user=${"a"}`
+      `https://expenser-backend-production.up.railway.app/payment/status?user=${"a"}`
     );
 
     if (response.data.success) {
