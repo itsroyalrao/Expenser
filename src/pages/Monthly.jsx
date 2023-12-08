@@ -24,7 +24,6 @@ function Monthly() {
         const response = await axios.get(
           "https://jsonplaceholder.typicode.com/posts"
         );
-        console.log(response);
         setExpenses(response.data);
         setLoadong(true);
       } catch (e) {
