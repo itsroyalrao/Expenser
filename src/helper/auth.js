@@ -76,4 +76,55 @@ async function findUser(setUser) {
   }
 }
 
-export { addUser, getUser, findUser };
+const resetPass = async (email, setMessage) => {
+  try {
+    console.log(email);
+    if (email) {
+      const response = await axios.post(
+        // "http://localhost:3000/auth/resetPassword",
+        "https://expenser-backend-production.up.railway.app/auth/resetPassword",
+        { email }
+      );
+
+      if (response.data.success) setMessage(response.data.msg);
+      else setMessage(response.data.msg);
+
+      email = "";
+    } else {
+      setMessage("Please provide email");
+    }
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const changePass = async (
+  email,
+  newPassword,
+  confirmNewPassword,
+  setMessage
+) => {
+  try {
+    if (newPassword === confirmNewPassword && newPassword !== "") {
+      const response = await axios.post(
+        // "http://localhost:3000/auth/changePassword",
+        "https://expenser-backend-production.up.railway.app/auth/changePassword",
+        {
+          email,
+          newPassword,
+        }
+      );
+      if (response.data.success) {
+        setMessage(response.data.msg);
+        setTimeout(() => {
+          window.location.href = "/login";
+        }, 2000);
+      }
+    } else if (newPassword === "") setMessage("Please provide password!");
+    else setMessage("Password do not match!");
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+export { addUser, getUser, findUser, resetPass, changePass };

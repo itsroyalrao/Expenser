@@ -8,6 +8,8 @@ import Total from "./pages/Total";
 import Daily from "./pages/Daily";
 import Weekly from "./pages/Weekly";
 import Monthly from "./pages/Monthly";
+import ResetPassword from "./pages/ResetPassword";
+import ChangePassword from "./pages/ChangePassword";
 
 function App() {
   axios.defaults.withCredentials = true;
@@ -22,6 +24,8 @@ function App() {
         <Route path="/total" element={<Total />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/resetPassword" element={<ResetPassword />} />
+        <Route path="/changePassword" element={<ChangePassword />} />
       </Routes>
     </Router>
   );

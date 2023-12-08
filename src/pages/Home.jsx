@@ -10,6 +10,7 @@ function Home() {
   const [user, setUser] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
   const [total, setTotal] = useState(null);
+  const [leaderboard, setLeaderboard] = useState(null);
 
   useEffect(() => {
     findUser(setUser);
@@ -20,8 +21,8 @@ function Home() {
       {user && (
         <>
           <div className="w-full h-fit min-h-[100svh] flex flex-col text-xl bg-[#242424]">
-            <Header user={user} />
-            <HomeExpenses />
+            <Header user={user} setLeaderboard={setLeaderboard} />
+            <HomeExpenses leaderboard={leaderboard} />
             <div
               className={
                 onMobile()

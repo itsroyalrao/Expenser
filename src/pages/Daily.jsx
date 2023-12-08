@@ -1,8 +1,6 @@
 import Header from "../components/Header";
 
 function Daily() {
-  //   const [user, setUser] = useState(null);
-
   return (
     <>
       <div className="w-full min-h-[100svh] flex flex-col">

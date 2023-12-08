@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { displayRazorpay } from "../helper/premium";
+import { displayRazorpay, showLeaderboard } from "../helper/premium";
 
-function MobileView({ premiumStatus, clicked, setClicked, setPremiumStatus }) {
+function MobileView({
+  premiumStatus,
+  clicked,
+  setClicked,
+  setPremiumStatus,
+  setLeaderboard,
+}) {
   return (
     <div className="flex justify-between items-center bg-green-600 text-white px-5 py-4 sticky top-0 text-lg">
       <div className="text-xl font-bold tracking-wide">Xpenser</div>
-      <div className="flex flex-col items-center pr-2">
+      <div className="flex flex-col items-center pr-2 cursor-pointer">
         <i
           className={
             clicked ? "fas fa-times scale-125" : "fas fa-bars scale-125"
@@ -47,15 +53,19 @@ function MobileView({ premiumStatus, clicked, setClicked, setPremiumStatus }) {
               <i className="fas fa-calculator" />
               <div className="capitalize">Total</div>
             </Link> */}
-            <Link
-              className="flex justify-center text-[whitesmoke] bg-blue-600 px-3 py-2 rounded active:bg-blue-700"
+            <div
+              className="flex justify-center text-[whitesmoke] bg-blue-600 px-3 py-2 rounded active:bg-blue-700 cursor-pointer"
               onClick={() => {
-                if (premiumStatus === "Upgrade")
+                if (premiumStatus === "Upgrade") {
                   displayRazorpay(setPremiumStatus);
+                } else {
+                  setClicked(!clicked);
+                  showLeaderboard(setLeaderboard);
+                }
               }}
             >
               {premiumStatus}
-            </Link>
+            </div>
             <Link
               to={"/login"}
               className="flex justify-center text-[whitesmoke] bg-red-600 px-3 py-2 rounded active:bg-red-700"
@@ -77,6 +87,7 @@ MobileView.propTypes = {
   clicked: PropTypes.bool,
   setClicked: PropTypes.func,
   setPremiumStatus: PropTypes.func,
+  setLeaderboard: PropTypes.func,
 };
 
 export default MobileView;

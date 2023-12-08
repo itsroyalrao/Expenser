@@ -75,4 +75,16 @@ const getPremiumStatus = async (setPremiumStatus) => {
   }
 };
 
-export { loadRazorpay, displayRazorpay, getPremiumStatus };
+const showLeaderboard = async (setLeaderboard) => {
+  try {
+    const response = await axios.get(
+      // `http://localhost:3000/auth/leaderboard`
+      `https://expenser-backend-production.up.railway.app/auth/leaderboard`
+    );
+    setLeaderboard(response.data.lb);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export { loadRazorpay, displayRazorpay, getPremiumStatus, showLeaderboard };

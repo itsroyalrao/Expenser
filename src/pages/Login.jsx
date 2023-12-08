@@ -25,7 +25,10 @@ function Login() {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <div className="w-full flex justify-end">
-                <Link className=" px-1 text-blue-500 text-lg">
+                <Link
+                  to={"/resetPassword"}
+                  className=" px-1 text-blue-500 text-lg"
+                >
                   Forgot password?
                 </Link>
               </div>
@@ -41,7 +44,7 @@ function Login() {
               <div className="text-red-500 flex justify-center">{message}</div>
             )}
             <button
-              className="w-full bg-blue-600 flex justify-center py-2 rounded-lg text-white text-xl hover:bg-blue-700 focus:scale-105"
+              className="w-full bg-blue-600 flex justify-center py-2 rounded-lg text-white text-xl hover:scale-105"
               onClick={() => getUser(email, password, setMessage)}
             >
               Login

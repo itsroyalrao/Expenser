@@ -1,14 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+
 import onMobile from "../helper/onMobile";
 import MobileView from "./MobileView";
 import {
   displayRazorpay,
   getPremiumStatus,
   loadRazorpay,
+  showLeaderboard,
 } from "../helper/premium";
 
-function Header() {
+function Header({ setLeaderboard }) {
   const loc = useLocation();
   const pageName = loc.pathname.replace("/", "");
 
@@ -29,6 +32,7 @@ function Header() {
             clicked={clicked}
             setClicked={setClicked}
             setPremiumStatus={setPremiumStatus}
+            setLeaderboard={setLeaderboard}
           />
         </div>
       ) : (
@@ -85,6 +89,9 @@ function Header() {
                 onClick={() => {
                   if (premiumStatus === "Upgrade")
                     displayRazorpay(setPremiumStatus);
+                  else {
+                    showLeaderboard(setLeaderboard);
+                  }
                 }}
               >
                 {premiumStatus}
@@ -113,5 +120,9 @@ function Header() {
     </>
   );
 }
+
+Header.propTypes = {
+  setLeaderboard: PropTypes.func,
+};
 
 export default Header;

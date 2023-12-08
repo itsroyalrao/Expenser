@@ -1,5 +1,14 @@
+import Header from "../components/Header";
+
 function Weekly() {
-  return <div>Weekly</div>;
+  return (
+    <>
+      <div className="w-full min-h-[100svh] flex flex-col">
+        <Header />
+        <div className="grow bg-[#242424]"></div>
+      </div>
+    </>
+  );
 }
 
 export default Weekly;
