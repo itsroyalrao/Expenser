@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { changePass } from "../helper/auth";
 
@@ -11,9 +11,6 @@ function ChangePassword() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  useEffect(() => {
-    document.title = "Change Password | Todo";
-  }, []);
   return (
     <>
       <div className="bg-[#202020] w-full h-[100dvh] flex flex-col items-center justify-center">
