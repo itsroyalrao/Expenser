@@ -15,8 +15,8 @@ const displayRazorpay = async (setPremiumStatus) => {
   try {
     if (window.Razorpay) {
       const response = await axios.get(
-        "http://localhost:3000/payment"
-        // "https://expenser-backend-production.up.railway.app/payment"
+        // "http://localhost:3000/payment"
+        "https://expenser-backend-production.up.railway.app/payment"
       );
       const orderId = response.data.order.id;
       const amount = response.data.amount;
