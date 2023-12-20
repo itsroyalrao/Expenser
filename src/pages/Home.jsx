@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import Header from "../components/Header";
 import Popup from "../components/Popup";
-import onMobile from "../helper/onMobile";
+import { onMobile } from "../helper/onMobile";
 import { findUser } from "../helper/auth";
 import HomeExpenses from "../components/HomeExpenses";
 

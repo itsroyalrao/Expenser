@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import onMobile from "../helper/onMobile";
+import { onMobile } from "../helper/onMobile";
 import { useState } from "react";
 
 import addExpense from "../helper/addExpense";

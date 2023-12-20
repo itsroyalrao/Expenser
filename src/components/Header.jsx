@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import onMobile from "../helper/onMobile";
+import {onMobile} from "../helper/onMobile";
 import MobileView from "./MobileView";
 import {
   displayRazorpay,

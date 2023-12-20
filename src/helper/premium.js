@@ -1,4 +1,5 @@
 import axios from "axios";
+import { url } from "./onMobile";
 
 const user = localStorage.getItem("user");
 
@@ -6,18 +7,12 @@ const loadRazorpay = async () => {
   const script = document.createElement("script");
   script.src = "https://checkout.razorpay.com/v1/checkout.js";
   document.body.appendChild(script);
-  // script.onload = () => {
-  //   console.log("Razorpay script loaded!");
-  // };
 };
 
 const displayRazorpay = async (setPremiumStatus) => {
   try {
     if (window.Razorpay) {
-      const response = await axios.get(
-        // "http://localhost:3000/payment"
-        "https://expenser-backend-production.up.railway.app/payment"
-      );
+      const response = await axios.get(`${url()}/payment`);
       const orderId = response.data.order.id;
       const amount = response.data.amount;
 
@@ -30,16 +25,12 @@ const displayRazorpay = async (setPremiumStatus) => {
         image: "icons/expenses.png",
         order_id: response,
         handler: async function (response) {
-          await axios.post(
-            // "http://localhost:3000/payment",
-            "https://expenser-backend-production.up.railway.app/payment",
-            {
-              user,
-              status: "success",
-              paymentId: response.razorpay_payment_id,
-              orderId,
-            }
-          );
+          await axios.post(`${url()}/payment`, {
+            user,
+            status: "success",
+            paymentId: response.razorpay_payment_id,
+            orderId,
+          });
 
           alert(
             "Payment successful! Payment ID: " + response.razorpay_payment_id
@@ -60,10 +51,7 @@ const displayRazorpay = async (setPremiumStatus) => {
 
 const getPremiumStatus = async (setPremiumStatus) => {
   try {
-    const response = await axios.get(
-      // `http://localhost:3000/payment/status?user=${user}`
-      `https://expenser-backend-production.up.railway.app/payment/status?user=${user}`
-    );
+    const response = await axios.get(`${url()}/payment/status?user=${user}`);
 
     if (response.data.success) {
       setPremiumStatus("Show Leaderboard");
@@ -77,10 +65,7 @@ const getPremiumStatus = async (setPremiumStatus) => {
 
 const showLeaderboard = async (setLeaderboard) => {
   try {
-    const response = await axios.get(
-      // `http://localhost:3000/auth/leaderboard`
-      `https://expenser-backend-production.up.railway.app/auth/leaderboard`
-    );
+    const response = await axios.get(`${url()}/auth/leaderboard`);
     setLeaderboard(response.data.lb);
   } catch (e) {
     console.log(e);

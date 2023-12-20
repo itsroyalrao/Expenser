@@ -1,4 +1,5 @@
 import axios from "axios";
+import { url } from "./onMobile";
 
 async function addExpense(expenseType, amount, description, email, setTotal) {
   const expenseData = {
@@ -8,11 +9,7 @@ async function addExpense(expenseType, amount, description, email, setTotal) {
     email,
   };
   try {
-    const response = await axios.post(
-      // `http://localhost:3000/home/addExpense`,
-      `https://expenser-backend-production.up.railway.app/home/addExpense`,
-      expenseData
-    );
+    const response = await axios.post(`${url()}/home/addExpense`, expenseData);
     if (response.data.success) {
       setTotal(response.data.result.totalAmount);
       window.location.href = "/";

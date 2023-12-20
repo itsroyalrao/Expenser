@@ -1,10 +1,10 @@
 import axios from "axios";
+import { url } from "./onMobile";
 
 async function allExpenses(email, setExpenses, setLoading) {
   try {
     const response = await axios.get(
-      // `http://localhost:3000/home/allExpenses?email=${email}`
-      `https://expenser-backend-production.up.railway.app/home/allExpenses?email=${email}`
+      `${url()}/home/allExpenses?email=${email}`
     );
 
     if (response.data.success) {
