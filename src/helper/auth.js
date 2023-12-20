@@ -68,13 +68,10 @@ async function findUser(setUser) {
 
 const resetPass = async (email, setMessage) => {
   try {
-    console.log(email);
     if (email) {
       const response = await axios.post(`${url()}/auth/resetPassword`, {
         email,
       });
-
-      console.log(response);
 
       if (response.data.success) setMessage(response.data.msg);
       else setMessage(response.data.msg);
