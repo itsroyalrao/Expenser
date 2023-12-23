@@ -5,6 +5,6 @@
 @tailwind utilities;
 
 body {
-  user-select: none;
+  /* user-select: none; */
   font-family: "Ubuntu", sans-serif;
 }
